@@ -1,0 +1,784 @@
+/*
+
+	Site du groupe : Les Conteuses de Pas.
+	Bals traditionnels, Stages de danse traditionnelle.
+
+	Créé le 10.06.2017
+	Par Guillaume MELLET
+
+	V0.1
+
+*/
+
+/* --- FONT-FACEs --- */
+
+@font-face {
+    font-family: avenir;
+    src: url(fonts/Avenir-Book.ttf);
+}
+
+@font-face {
+    font-family: centuryGothic;
+    src: url(fonts/centuryGothic);
+}
+
+@font-face {
+    font-family: ITCavtGd;
+    src: url(fonts/ITCAvantGardeStd-XLt.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: ITCavtGd;
+    src: url(fonts/ITCAvantGardeStd-Md.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: ITCavtGd;
+    src: url(fonts/ITCAvantGardeStd-Demi.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: ITCavtGd;
+    src: url(fonts/ITCAvantGardeStd-Bk.otf);
+    font-weight: 500;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/FA/fontawesome-webfont.eot?v=4.7.0');
+  src: url('fonts/FA/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/FA/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/FA/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/FA/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/FA/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- GENERIC CSS --- */
+
+.left{
+	float: left;
+	max-width: 50%;
+}
+
+.sLeft{
+	float: left;
+	margin-left: 1%;
+	margin-top: 2%;
+	margin-bottom: 3%;
+	max-width: 50%;
+}
+
+.right{
+	float: right;
+	max-width: 50%;
+}
+
+.clear{
+	clear: both;
+}
+
+.dL{
+	margin-top: 6% !important;
+}
+
+a{
+	text-decoration: none;
+	padding: 12px 15px 10px 15px;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+a.small{
+	font-size: 12pt !important;
+	line-height: 12pt !important;
+}
+
+a:hover, input[type=submit]:hover{
+	opacity: 0.8;
+}
+
+a.blue, input[type=submit].blue{
+	background-color: #014fff;
+	color: white;
+}
+
+p.blue, span.blue, form.blue, input[type=text].blue{
+	border-color: #014fff !important;
+}
+
+li.blue:before{
+	color: #014fff;
+}
+
+a.orange, input[type=submit].orange{
+	background-color: #ea7700;
+	color: white;
+}
+
+p.orange, span.orange, form.orange, input[type=text].orange{
+	border-color: #ea7700 !important;
+}
+
+li.orange:before{
+	color: #ea7700;
+}
+
+a.green, input[type=submit].green{
+	background-color: #8fc43c;
+	color: white;
+}
+
+p.green, span.green, form.green, input[type=text].green{
+	border-color: #8fc43c !important;
+}
+
+li.green:before{
+	color: #8fc43c;
+}
+
+a.pink, input[type=submit].pink{
+	background-color: #e7308f;
+	color: white;
+}
+
+p.pink, span.pink, form.pink, input[type=text].pink{
+	border-color: #e7308f !important;
+}
+
+li.pink:before{
+	color: #e7308f;
+}
+
+.borderLeft{
+	padding-left: 2%;
+	border-left: solid 2px;
+}
+
+@media only screen and (max-width: 425px) {
+
+	.sLeft{
+		max-width: 100%;
+	}
+
+	.left{
+		max-width: 100%;
+	}
+
+	.right{
+		max-width: 100%;
+	}
+
+	a.small{
+		font-size: 10pt !important;
+	}
+
+	.borderLeft{
+		border-left: solid 4px;
+	}
+
+}
+
+/* --- STRUCTURE --- */
+
+html{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url('images/BG_Site_epure.jpg') #fff5ea center top no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	position: relative;
+	display: flex;
+	width: 900px;
+	height: auto;
+	background: #fffcf6;
+	margin: 0 auto;
+	font-family: 'ITCavtGd', helvetica, sans-serif;
+	font-size: 15pt;
+	font-weight: 100;
+	text-align: left;
+	line-height: 20pt;
+}
+
+@media only screen and (max-width: 900px) {
+
+	body{
+		width: 100%;
+	}
+}
+
+section{
+	font-family: inherit;
+}
+
+section#global-container{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+section#global-container div#fond-logo-titre{
+	width: 100%;
+	height: 100px;
+	position: relative;
+	display: flex;
+	background: url('images/bandeau-titre_900.png') center center no-repeat;
+	margin: 30px 0;
+}
+
+section#global-container div#fond-logo-titre > span#logo-titre{
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 70%;
+	margin: 15px auto;
+	background: url('images/CDP-logo-titre_white.svg') center center no-repeat;
+}
+
+@media only screen and (max-width: 425px) {
+
+	section#global-container div#fond-logo-titre > span#logo-titre{
+		width: 100%;
+		background-size: 280px 100px;
+	}
+
+}
+
+section#global-container p#intro{
+	margin-top: 60px;
+	font-size: 22pt;
+	text-align: left;
+	margin-left: 6% !important;
+}
+
+
+section#global-container > section#inner-container{
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
+
+section#global-container > section#inner-container p{
+	width: 100%;
+	display: block;
+	margin: 4% 0 2% 0;
+	padding-top: 4px;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	line-height: inherit;
+}
+
+section#global-container > section#inner-container span{
+	display: inline-block;
+	width: auto;
+	margin: 4% 0 2% 0;
+	padding-top: 4px;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	line-height: inherit;
+}
+
+/* - WIP - */
+
+section#global-container > section#inner-container p#work{
+	font-weight: 300;
+	color: #ea7700;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+}
+
+section#global-container > section#inner-container p#work:before{
+	font-family: 'FontAwesome';
+	content:'\f085';
+	margin-right: 20px;
+	font-size: 32pt;
+	position: absolute;
+	left: 0;
+}
+
+section#global-container > section#inner-container p#work:after{
+	font-family: 'FontAwesome';
+	content:'\f085';
+	margin-left: 20px;
+	font-size: 32pt;
+	position: absolute;
+	right: 0;
+}
+
+/* - Liste - */
+
+section#global-container > section#inner-container ul{
+	display: block;
+	width: 100%;
+	margin: 1% 0 3% 0;
+	height: auto;
+	position: relative;
+}
+
+section#global-container > section#inner-container ul li{
+	display: inline-block;
+	width: 80%;
+	margin: 1% 10%;
+	list-style: none;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+section#global-container > section#inner-container ul li:before{
+	content:'■';
+	margin-right: 2%;
+	white-space: pre;
+}
+
+
+
+/* --- FORMULAIRE --- */
+
+section#global-container > section#inner-container form#mailForm{
+	width: 100%;
+	position: relative;
+	height: 95px;
+	display: block;
+	margin: 5% 0 0 0;
+	padding-top: 1%
+}
+
+section#global-container > section#inner-container form#mailForm span{
+	margin: 0;
+}
+
+section#global-container > section#inner-container form#mailForm span.fLeft{
+	width: 70%;
+	float: left;
+}
+
+section#global-container > section#inner-container form#mailForm span.fRight{
+	width: 28%;
+	float: right;
+	text-align: right;
+}
+
+section#global-container > section#inner-container form#mailForm span input[type=text]{
+	height: 44px;
+	width: 100%;
+	padding: 0 1%;
+	border: 1px solid;
+	font-family: Helvetica, sans-serif;
+	font-weight: inherit;
+	font-size: 14pt;
+	color: #666;
+}
+
+section#global-container > section#inner-container form#mailForm span input[type=text]::placeholder{
+	color: #999;
+}
+
+section#global-container > section#inner-container form#mailForm span input[type=submit]{
+	text-decoration: none;
+    padding: 12px 15px 10px 15px;
+    font-weight: inherit;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+section#global-container > section#inner-container p#response
+{
+	text-align: center;
+	padding: 12px 10px 10px 10px;
+	display: block;
+	border: 1px solid;
+	font-size: 13pt;
+	margin-top: 1%;
+}
+
+section#global-container > section#inner-container p#response.success{
+	border-color: #8fc43c;
+	background-color: #e9f3d8;
+	color: #435c1c;
+}
+
+section#global-container > section#inner-container p#response.failure{
+	border-color: #cb2909;
+	background-color: #fdcec4;
+	color: #791805;
+}
+
+
+@media only screen and (max-width: 900px) {
+
+	section#global-container > section#inner-container p#work{
+		padding: 0 0 0 10%;
+		width: 70%;
+		text-align: left;
+	}
+
+	section#global-container > section#inner-container p#work:before{
+		padding-top: 10px;
+		left: 10%;
+	}
+
+	section#global-container > section#inner-container p#work:after{
+		display: none;
+	}
+}
+
+
+@media only screen and (max-width: 770px) {
+
+	body{
+		font-size: 13pt;
+	}
+
+	section#global-container p#intro{
+		margin-top: 45px;
+		font-size: 20pt;
+	}
+
+	section#global-container div#fond-logo-titre{
+		margin: 15px 0;
+	}
+
+	section#global-container > section#inner-container p#work{
+		padding: 0 0 0 17%;
+		width: 70%;
+		text-align: left;
+	}
+
+	section#global-container > section#inner-container p#work:before{
+		padding-top: 0;
+		left: 6%;
+	}
+
+	section#global-container > section#inner-container {
+		width: 90%;
+	}
+
+	section#global-container > section#inner-container form#mailForm span input[type=text]{
+		height: 40px;
+		font-size: 13pt;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 660px) {
+
+	
+
+}
+
+
+
+@media only screen and (max-width: 425px) {
+
+	body{
+		font-size: 11pt;
+	}
+
+	section#global-container p#intro{
+		margin-top: 45px;
+		font-size: 15pt;
+		margin-left: 2% !important;
+	}
+
+	section#global-container div#fond-logo-titre{
+		margin: 15px 0;
+	}
+
+	section#global-container > section#inner-container p#work{
+		padding: 0 0 0 10%;
+		width: 70%;
+		text-align: left;
+		margin-left: 12%;
+	}
+
+	section#global-container > section#inner-container p#work:before{
+		padding-top: 10px;
+		left: 5%;
+	}
+
+	section#global-container > section#inner-container {
+		width: 100%;
+	}
+
+	section#global-container > section#inner-container p{
+	    margin: 2% 3%;
+	    width: 90%;
+	}
+
+	section#global-container > section#inner-container span.mobile{
+		width: 94%;
+	}
+
+	section#global-container > section#inner-container span.mobile.right{
+		text-align: right;
+		margin-right: 2%;
+	}
+	
+	section#global-container > section#inner-container form#mailForm{
+		height: 135px;
+	}
+
+	section#global-container > section#inner-container form#mailForm span.fLeft{
+		width: 93%;
+	}
+
+	section#global-container > section#inner-container form#mailForm span.fRight{
+		width: 96%;
+	    text-align: left;
+	    margin-right: 4%;
+	}
+
+	section#global-container > section#inner-container form#mailForm span input[type=text]{
+		height: 40px;
+		padding: 0 0 0 1%;
+		font-size: 11pt;
+	}
+
+	section#global-container > section#inner-container form#mailForm span input[type=submit]{
+	    padding: 12px 0 10px 0;
+	    width: 98.3%;
+	}
+	
+	section#global-container > section#inner-container p#response{
+	    font-size: 11pt;
+	    width: 87%;
+	}
+
+}
+
+
+/* --- PAROLES --- */
+
+body#paroles section#global-container h1{
+	font-family: inherit;
+	font-weight: 100;
+	font-size: 22pt;
+	margin: 0 0 2% 6%;
+	display: block;
+	width: 40%;
+	text-align: left;
+}
+
+section#global-container a.paroles{
+	position: relative;
+	background-color: white;
+	width: 80%;
+	height: auto;
+	display: inline-block;
+	float: left;
+	padding: 0;
+	margin-left: 10%;
+	margin-bottom: 1%;
+	color: black;
+}
+
+section#global-container a.paroles:after{
+	content: '>';
+    font-size: 30pt;
+    line-height: 30pt;
+    float: right;
+    margin-right: 3%;
+    margin-top: 18px;
+}
+
+section#global-container a.paroles > span.nbrs{
+	position: relative;
+    float: left;
+    width: 5%;
+    padding: 3% 4% 2% 3%;
+    font-size: 30pt;
+    line-height: 30pt;
+    margin-right: 3%;
+}
+
+section#global-container a.paroles > span.pInfo{
+	display: block;
+	float: left;
+	width: 72%;
+	padding: 0;
+	margin-top: 2%;
+	color: inherit;
+}
+
+section#global-container a.paroles > span.pInfo h2{
+	margin-bottom: 1%;
+}
+
+section#global-container a.paroles > span.pInfo h3, section#global-container a.paroles > span.pInfo h4{
+	font-size: 10pt;
+	font-style: italic;
+	font-weight: 300;
+}
+
+section#global-container a.paroles > span.pInfo h4{
+	display: none;
+}
+
+
+/* -- GEN. PAROLES -- */
+
+a.paroles.blue > span.nbrs{
+	background-color: #014fff;
+	color: white;
+}
+
+a.paroles.orange > span.nbrs{
+	background-color: #ea7700;
+	color: white;
+}
+
+a.paroles.green > span.nbrs{
+	background-color: #8fc43c;
+	color: white;
+}
+
+a.paroles.pink > span.nbrs{
+	background-color: #e7308f;
+	color: white;
+}
+
+h3.left{
+	margin: 0;
+	max-width: 100%;
+}
+
+h4.right{
+	margin: 0;
+	max-width: 100%;
+}
+
+a.paroles.blue:hover{
+	background-color: #014fff !important;
+	color: white !important;
+}
+
+a.paroles.orange:hover{
+	background-color: #ea7700 !important;
+	color: white !important;
+}
+
+a.paroles.green:hover{
+	background-color: #8fc43c !important;
+	color: white !important;
+}
+
+a.paroles.pink:hover{
+	background-color: #e7308f !important;
+	color: white !important;
+}
+
+
+@media only screen and (max-width: 770px) {
+
+	section#global-container a.paroles > span.nbrs{
+		font-size: 22pt;
+	}
+
+	section#global-container a.paroles > span.pInfo h2{
+		font-size: 13pt;
+	}
+
+	section#global-container a.paroles > span.pInfo h3, section#global-container a.paroles > span.pInfo h4{
+		font-size: 9pt;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 660px) {
+
+	section#global-container a.paroles > span.nbrs{
+		font-size: 20pt;
+		padding: 7% 4% 6% 3%;
+	}
+
+	section#global-container a.paroles > span.pInfo h2{
+		font-size: 13pt;
+	}
+
+	section#global-container a.paroles > span.pInfo h3, section#global-container a.paroles > span.pInfo h4{
+		font-size: 9pt;
+	}
+
+	section#global-container a.paroles:after{
+	    margin-top: 7%;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 425px) {
+
+	body#paroles section#global-container h1{
+		width: 88%;
+		font-size: 20pt;
+		margin-bottom: 15px;
+	}
+
+	section#global-container a.paroles > span.nbrs{
+	    font-size: 15pt;
+		padding: 7% 5% 4% 3%;
+	}
+
+	section#global-container a.paroles > span.pInfo h2{
+		font-size: 12pt;
+	    line-height: 14pt;
+	    margin-bottom: 0;
+	    margin-top: 1%;
+	}
+
+	section#global-container a.paroles > span.pInfo h2.uL{
+		margin-top: 6%;
+	}
+
+	section#global-container a.paroles > span.pInfo h3, section#global-container a.paroles > span.pInfo h4{
+		font-size: 8pt;
+	}
+
+	section#global-container a.paroles:after{
+	    display: none;
+	}
+
+	section#global-container a.paroles > span.pInfo{
+		width: 80%;
+	}
+
+	a.paroles.blue{
+		background-color: #014fff !important;
+		color: white !important;
+	}
+
+	a.paroles.orange{
+		background-color: #ea7700 !important;
+		color: white !important;
+	}
+
+	a.paroles.green{
+		background-color: #8fc43c !important;
+		color: white !important;
+	}
+
+	a.paroles.pink{
+		background-color: #e7308f !important;
+		color: white !important;
+	}
+
+}
+
