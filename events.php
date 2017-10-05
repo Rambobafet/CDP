@@ -5,13 +5,14 @@
 <html lang="fr-FR">
 <head>
 
-<title>Paroles - Les Conteuses de Pas</title>
+<title>Evènements - Les Conteuses de Pas</title>
 <meta charset="utf-8">
 <meta name="title" content="Paroles - les Conteuses de Pas">
 <meta name="description" content="Groupe de musique et de chant tradtionnels composé de 4 femmes. Elles se produisent en Bal etpropose également des Stage de danse.">
 <meta name="author" content="Guillaume MELLET">	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="icon" href="css/images/CDP_favicon.ico" />
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -22,15 +23,14 @@
 
 </head>
 <body id="paroles">
-
 	<nav id="navigation">
-		<a id="logo" target="_blank" href="/CDP/index.php"><img src="" alt="logo abrégé conteuses"></a>
+		<a id="logo" target="_blank" href="/CDP/index.php"><img src="css/images/C_logo.svg" alt="logo abrégé conteuses"></a>
 		<ul>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
-			<li><a href=""></a></li>
+			<!-- <li><a href="/CDP/index.php"><i class="fa fa-home" aria-hidden="true"></i></a></li> -->
+			<li><a href="">évènements</a></li>
+			<li><a href="">histoire</a></li>
+			<li><a href="/CDP/paroles.php">discographie</a></li>
+			<li><a href="">contact</a></li>
 		</ul>
 		<div id="player"></div>
 	</nav>
@@ -38,11 +38,11 @@
 	<section id="global-container">
 
 		
-
-		<span class="sLeft"><a href="/CDP/index.php" class="green small">< Retour à l'accueil</a></span>
+ 
+		
 		
 	</section>
-	
+
 	<footer>
 		<span id="copyright"><? echo date("Y"); ?> - Les Conteuses de Pas</span>
 		<span id="footer-nav">

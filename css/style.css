@@ -204,6 +204,52 @@ body{
 	line-height: 20pt;
 }
 
+nav#navigation{
+	width: 100%;
+	height: 40px;
+	background: url('images/bandeau-titre_900.png') center center no-repeat;
+}
+
+nav#navigation a#logo {
+    padding: 0;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+nav#navigation a#logo img{
+	height: 30px;
+	background-color: black;
+	opacity: 0.7; 
+	padding: 5px 10px;
+}
+
+nav#navigation > ul {
+    display: inline-block;
+    width: 80%;
+    height: 30px;
+}
+
+nav#navigation > ul > li {
+    display: inline-block;
+    height: 40px;
+}
+
+nav#navigation > ul > li a {
+    color:  black;
+    padding: 8px 15px 6px 15px;
+    display: block;
+    clear: left;
+}
+
+nav#navigation > ul > li a::first-letter{
+	text-transform: uppercase;
+}
+
+nav#navigation > ul > li a:hover{
+	border-bottom: 2px solid black;
+}
+
 section{
 	font-family: inherit;
 }
@@ -235,6 +281,7 @@ footer{
 	text-align: inherit;
 	line-height: inherit;
 	color: grey;
+	clear:  both;
 }
 
 footer span#copyright{
