@@ -1,74 +1,68 @@
+<?php 
+include('backend/insertMail.php');
 
-<?php //include('backend/insertMail.php'); ?>
+// Define variables for SEO
+$pageTitle = 'Présentation du groupe | Les conteuses de pas';
+$pageDescription = 'C\'est pour une scène partagée que les Conteuses de Pas se sont formées en 2014. Elles avaient réuni voix, vielle à roue, harpe et percussions, pour le temps d\'un bal... mais se sont tant amusées à faire de la musique ensemble qu\'elles ont continué sur cette lancée, avec beaucoup d\'enthousiasme et de bonheur.';
+$pageCanonical = 'http://www.lesconteusesdepas.fr/';
+// We don't want the search engines to see our website just yet
+$pageRobots = 'index,follow';
 
-<!DOCTYPE html>
-<html lang="fr-FR">
-<head>
+//Define active page
+$page = 'PRESENTATION';
+ 
+// Include header file
+include('header.php'); 
+?>
 
-<title>Accueil - Les Conteuses de Pas</title>
-<meta charset="utf-8">
-<meta name="title" content="Accueil - les Conteuses de Pas">
-<meta name="description" content="Groupe de musique et de chant tradtionnels composé de 4 femmes. Elles se produisent en Bal etpropose également des Stage de danse.">
-<meta name="author" content="Guillaume MELLET">	
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<div id="global-container" class="presentation">
 
-<link rel="stylesheet" type="text/css" href="css/reset.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+		<h1>Présentation</h1>
 
-<script src="https://use.fontawesome.com/325310aa84.js"></script>
-<script src="script/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-</head>
-<body id="accueil">
-
-	<section id="global-container">
-
-		<p id="intro">Bienvenue chez... </p>
-
-		<div id="fond-logo-titre">
-			<span id="logo-titre"></span>	
-		</div>
-
-		<section id="inner-container" class="clear">
-
-			<p id="work">Le site complet est en plein chantier, il arrivera bientôt !</p>
-
-			<span class="borderLeft green left mobile">En attendant son arrivée, vous pouvez retrouver les paroles de nos morceaux.</span>
-			<span class="right dL mobile"><a href="/CDP/paroles.php" class="green">C'est par ici ></a></span>
-
-			<div class="clear"></div>
-
-			<p>Vous pouvez également nous confier votre email, nous pourrons ainsi vous informer sur :</p>
-
-
-			<ul>
-				<li class="blue">Nos évènements à venir,</li>
-				<li class="orange">La sortie de notre disque,</li>
-				<li class="green">L'ouverture de notre site !</li>
-			</ul>
-
-
-			<form id="mailForm" class="borderLeft pink clear" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-				<span>Pour vous inscrire c'est ici : </span>
-				<span class="fLeft"><input type="text" class="pink" name="mail" value="" placeholder="Renseignez votre adresse email" required></span>
-				<span class="fRight"><input type="submit" class="pink" name="send" value="Je m'inscris !"></span>
-			</form>
-
-			<? if($response != null) { ?>
-			<p id="response" class="<? echo ($success === TRUE) ? 'success' : 'failure' ?>">
-				<? echo $response; ?>
-			</p>
-			<? } ?>
-
-			<p>On espère vous (re)croiser bientôt au cours d'un Bal ou d'un Stage,</p>
-
-			<p>Les Conteuses</p>
-
-		</section>
 		
-	</section>
+ 		<section id="group">
+ 			<h2 class="pink">Le Groupe</h2>
+ 			<p>C'est pour une scène partagée que les Conteuses de Pas se sont formées en 2014. Elles avaient réuni voix, vielle à roue, harpe et percussions, pour le temps d'un bal... mais se sont tant amusées à faire de la musique ensemble qu'elles ont continué sur cette lancée, avec beaucoup d'enthousiasme et de bonheur.</p>
+ 			<p>Issues chacune d’horizons musicaux très différents, du classique au jazz en passant par la tradition orale et la musique du monde, elles trouvent dans le dialogue de leurs influences, une nouvelle matière musicale à travailler ensemble.</p>
+ 		</section>
 
-</body>
-</html>
+ 		<section id="members">
+
+ 			<h2 class="green">Les Membres</h2>
+ 			
+ 			<div id="presentation">
+ 				<img src="css/images/Marion_CDP.jpg">
+ 				<h3 class="pink">Marion Blanchard</h3>
+ 				<p>Après une première approche du chant dans l’enfance au sein d’une chorale généraliste, elle s’oriente à l’adolescence vers le jazz qu’elle pratiquera quelques années. Un nouveau changement d’orientation l’amènera à l’âge adulte simultanément vers le chant d’Inde du Nord et le chant traditionnel, deux univers bien plus proche qu’on ne le croit.</p>
+ 			</div>
+ 			<div class="clear"></div>
+
+ 			<div id="presentation">
+ 				<h3 class="green">Virgilia Gacoin</h3>
+ 				<p>Intéressée depuis l’enfance par la musique ancienne et les modes d’expressions traditionnels, il lui faudra la découverte des veillées de chant pour se lancer finalement dans une pratique régulière qu’elle afinera à l’aide de stages avec des passeurs de mémoires et l’écoute de nombreux collectages. Attirée par le blues et les sons frottants, elle en parsème sans remords ses arrangements.</p>
+ 				<img src="css/images/virgi_CDP.jpg">
+ 			</div>
+ 			<div class="clear"></div>
+
+ 			<div id="presentation">
+ 				<img src="css/images/Coco_CDP.jpg">
+ 				<h3 class="orange">Coraline Loiseau</h3>
+ 				<p>Son premier contact avec la musique sera le piano. Mais à 10 ans, elle se tourne vers la vielle à roue. Un choix pas si surprenant dans son Berry natal, dont l’instrument est l’emblème, et où les bals folks font partie du décor. Son apprentissage se fait en parallèle au conservatoire classique, et « sur le terrain » dans les bœufs où l’on se forge un répertoire à l’oreille. Elle chante depuis longtemps, principalement en faisant la vaisselle, mais c’est avec les Conteuses de Pas qu’elle commencera à donner de la voix en public.</p>
+ 			</div>
+ 			<div class="clear"></div>
+ 			
+ 			<div id="presentation">
+ 				<h3 class="blue">Clémence Moiron</h3>
+ 				<p>Sa première approche de la harpe se fait par l’apprentissage de la harpe classique. Mais son désir de jouer avec d’autres se heurte aux dimensions de l’instrument, ce qui l’amène à choisir la harpe bohémienne, à l’ambitus équivalent à celui de la harpe celtique mais légère et transportable. Sa découverte des musiques traditionnelles italiennes la lance dans le domaine du chant et de l’accompagnement, convertissant la harpe en un instrument aussi rythmique qu’il est naturellement mélodique.</p>
+ 				<img src="css/images/Clemence_CDP.jpg">
+ 			</div>
+ 			<div class="clear"></div>
+
+ 		</section>
+		
+		
+	</div>
+
+<?php
+include('footer.php');
+?>
