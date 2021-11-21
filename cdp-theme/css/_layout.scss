@@ -1,0 +1,528 @@
+/*
+	Site du groupe : Les Conteuses de Pas.
+	Bals traditionnels, Stages de danse traditionnelle.
+	Créé le 10.06.2017
+	Par Guillaume MELLET
+	V0.1
+*/
+
+/* --- GENERIC CSS --- */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+
+h1{
+	font-size: 2.2rem;
+}
+
+h2{
+	font-size: 1.8rem;
+}
+
+p{
+	font-size: 1.2rem;
+}
+
+.left{
+	float: left;
+}
+
+.sLeft{
+	float: left;
+	margin-left: 1%;
+	margin-top: 2%;
+	margin-bottom: 3%;
+	max-width: 50%;
+}
+
+.right{
+	float: right;
+	max-width: 50%;
+}
+
+.clear{
+	clear: both;
+}
+
+.dL{
+	margin-top: 6% !important;
+}
+
+.desktop{
+	display: inline-block;
+}
+
+.hidden{
+	display: none;
+}
+
+.mobile{
+	display: none;
+}
+
+a{
+	text-decoration: none;
+	padding: 12px 15px 10px 15px;
+	font-weight: 100;
+	cursor: pointer;
+}
+
+a.small{
+	font-size: 1.2rem !important;
+	line-height: 1.5 !important;
+}
+
+a:hover, input[type=submit]:hover{
+	opacity: 0.8;
+}
+
+a.blue, input[type=submit].blue, section.date.blue{
+	background-color: $cdp-blue;
+	color: white;
+}
+
+p.blue, span.blue, form.blue, input[type=text].blue{
+	border-color: $cdp-blue !important;
+}
+
+li.blue:before, a.tblue, input[type=submit].tblue, h2.blue, h3.blue{
+	color: $cdp-blue;
+}
+
+a.orange, input[type=submit].orange, section.date.orange{
+	background-color: $cdp-orange;
+	color: white;
+}
+
+p.orange, span.orange, form.orange, input[type=text].orange{
+	border-color: $cdp-orange !important;
+}
+
+li.orange:before, a.torange, input[type=submit].torange, h2.orange, h3.orange{
+	color: $cdp-orange;
+}
+
+a.green, input[type=submit].green, section.date.green{
+	background-color: $cdp-green;
+	color: white;
+}
+
+p.green, span.green, form.green, input[type=text].green{
+	border-color: $cdp-green !important;
+}
+
+li.green:before, a.tgreen, input[type=submit].tgreen, h2.green, h3.green{
+	color: $cdp-green;
+}
+
+a.pink, input[type=submit].pink, section.date.pink{
+	background-color: $cdp-pink;
+	color: white;
+}
+
+p.pink, span.pink, form.pink, input[type=text].pink{
+	border-color: $cdp-pink !important;
+}
+
+li.pink:before, a.tpink, input[type=submit].tpink, h2.pink, h3.pink{
+	color: $cdp-pink;
+}
+
+.borderLeft{
+	padding-left: 2%;
+	border-left: solid 2px;
+}
+
+@media only screen and (max-width: 425px) {
+
+	.sLeft{
+		max-width: 100%;
+	}
+
+	.left{
+		max-width: 100%;
+	}
+
+	.right{
+		max-width: 100%;
+	}
+
+	a.small{
+		font-size: 1rem !important;
+	}
+
+	.borderLeft{
+		border-left: solid 4px;
+	}
+
+	a:hover, input[type=submit]:hover{
+		opacity: 1;
+	}
+
+}
+
+/* --- STRUCTURE --- */
+
+html{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url('images/BG_Site_epure.jpg') #fff5ea center top no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	position: relative;
+	display: block;
+	width: 900px;
+	min-height: 100%;
+	background: $grey-100;
+	margin: 0 auto;
+	font-family: $primaryFont;
+	font-size: 1.5rem;
+	font-weight: 100;
+	text-align: left;
+}
+
+a.fa-map{
+	background-color: #3cba54;
+}
+
+a.fa-facebook-f{
+	background-color: $fb-blue;
+}
+
+a.fa-soundcloud{
+	padding-left: 8px;
+	background-color: $sc-orange;
+}
+
+a.aDiff{
+	background-color: #3F7F7B;
+    padding: 10px 14px 4px 14px;
+    font-weight: 300;
+}
+
+section{
+	font-family: inherit;
+}
+
+div#global-container{
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-top: 3%;
+}
+
+div#global-container h1{
+	margin: 3% 5%;
+}
+
+div#global-container h1::first-letter{
+	text-transform: uppercase;
+}
+
+div#global-container > h2{
+	margin: 1% 10%;
+	font-weight: 600;
+}
+
+div#global-container section#inner-container{
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
+
+@media only screen and (max-width: 900px) {
+	body{
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	html{
+		background: $grey-100;
+	}
+
+	body{
+		font-size: 1.1rem;
+	}
+
+	h1{
+		font-size: 2rem;
+	}
+
+	h2{
+		font-size: 1.4rem;
+	}
+
+	div#global-container h1 {
+	    margin: 7% 5%;
+	}
+
+	ul.mobile li a.torange{
+		color: $cdp-orange !important;
+	}
+
+	ul.mobile li a.tgreen{
+		color: $cdp-green !important;
+	}
+
+	ul.mobile li a.tblue{
+		color: $cdp-blue !important;
+	}
+
+	ul.mobile li a.tpink{
+		color: $cdp-pink !important;
+	}
+
+	div#global-container{
+		top: 40px;
+		z-index: 0;
+		margin-bottom: 40px;
+	}
+}
+
+/* -- Accueil -- */
+
+body#accueil > div#global-container{
+	padding-top: 60px;
+}
+
+
+div#global-container p#intro{
+	font-size: 2.2rem;
+	text-align: left;
+	margin-left: 6% !important;
+}
+
+div#global-container div#fond-logo-titre{
+	width: 100%;
+	height: 100px;
+	position: relative;
+	display: flex;
+	background: url('images/bandeau-titre_900.png') center center no-repeat;
+	margin: 30px 0;
+}
+
+div#global-container div#fond-logo-titre > span#logo-titre{
+	position: relative;
+	display: block;
+	width: 50%;
+	height: 70%;
+	margin: 15px auto;
+	background: url('images/CDP-logo-titre_white.svg') center center no-repeat;
+}
+
+@media only screen and (max-width: 425px) {
+
+	div#global-container div#fond-logo-titre > span#logo-titre{
+		width: 100%;
+		background-size: 280px 100px;
+	}
+
+}
+
+div#global-container > section#inner-container p{
+	width: 100%;
+	display: block;
+	margin: 4% 0 2% 0;
+	padding-top: 4px;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	line-height: inherit;
+}
+
+div#global-container > section#inner-container span{
+	display: inline-block;
+	width: auto;
+	margin: 4% 0 2% 0;
+	padding-top: 4px;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: inherit;
+	line-height: inherit;
+}
+
+/* - WIP - */
+
+div#global-container > section#inner-container p#work{
+	font-weight: 300;
+	color: $cdp-orange;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+}
+
+div#global-container > section#inner-container p#work:before{
+	font-family: 'FontAwesome';
+	content:'\f085';
+	margin-right: 20px;
+	font-size: 3.2rem;
+	position: absolute;
+	left: 0;
+}
+
+div#global-container > section#inner-container p#work:after{
+	font-family: 'FontAwesome';
+	content:'\f085';
+	margin-left: 20px;
+	font-size: 3.2rem;
+	position: absolute;
+	right: 0;
+}
+
+/* - Liste - */
+
+div#global-container > section#inner-container ul{
+	display: block;
+	width: 100%;
+	margin: 1% 0 3% 0;
+	height: auto;
+	position: relative;
+}
+
+div#global-container > section#inner-container ul li{
+	display: inline-block;
+	width: 80%;
+	margin: 1% 10%;
+	list-style: none;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+div#global-container > section#inner-container ul li:before{
+	content:'■';
+	margin-right: 2%;
+	white-space: pre;
+}
+
+@media only screen and (max-width: 900px) {
+
+	div#global-container > section#inner-container p#work{
+		padding: 0 0 0 10%;
+		width: 70%;
+		text-align: left;
+	}
+
+	div#global-container > section#inner-container p#work:before{
+		padding-top: 10px;
+		left: 10%;
+	}
+
+	div#global-container > section#inner-container p#work:after{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 770px) {
+
+	body{
+		font-size: 1.3rem;
+	}
+
+	body#accueil > div#global-container{
+		padding-top: 45px;
+	}
+
+	div#global-container p#intro{
+		font-size: 2rem;
+	}
+
+	div#global-container div#fond-logo-titre{
+		margin: 15px 0;
+	}
+
+	div#global-container > section#inner-container {
+		width: 90%;
+	}
+
+	div#global-container > section#inner-container p#work{
+		padding: 0 0 0 17%;
+		width: 70%;
+		text-align: left;
+	}
+
+	div#global-container > section#inner-container p#work:before{
+		padding-top: 0;
+		left: 6%;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 425px) {
+
+	body#accueil > div#global-container{
+		padding-top: 30px;
+	}
+
+	div#global-container p#intro{
+		font-size: 1.5rem;
+		margin-left: 2% !important;
+	}
+
+	div#global-container div#fond-logo-titre{
+		margin: 15px 0;
+	}
+
+	div#global-container > section#inner-container p#work{
+		padding: 0 0 0 10%;
+		width: 70%;
+		text-align: left;
+		margin-left: 12%;
+	}
+
+	div#global-container > section#inner-container p#work:before{
+		padding-top: 10px;
+		left: 5%;
+	}
+
+	div#global-container > section#inner-container {
+		width: 100%;
+	}
+
+	div#global-container > section#inner-container p{
+	    margin: 2% 3%;
+	    width: 90%;
+	}
+
+	div#global-container > section#inner-container span.mobile{
+		width: 94%;
+	}
+
+	div#global-container > section#inner-container span.mobile.right{
+		text-align: right;
+		margin-right: 2%;
+	}
+}
+
+
+/* Misc.
+================================================== */
+
+.add-bottom { width: 50%; display: block; margin: 0 auto; }
+.center { text-align:center; }
+
+
+/* Custom Styles
+================================================== */
+
+/* CSS Transitions */
+* {
+transition:all 100ms ease;
+}

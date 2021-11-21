@@ -1,0 +1,217 @@
+/* --- PAROLES --- */
+
+body#paroles div#global-container h1{
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 2.2rem;
+  margin: 0 0 2% 6%;
+  display: block;
+  width: 40%;
+  text-align: left;
+}
+
+div#global-container a.paroles{
+  position: relative;
+  background-color: white;
+  width: 80%;
+  height: auto;
+  display: inline-block;
+  padding: 0;
+  margin-left: 10%;
+  color: black;
+}
+
+div#global-container a.paroles:after{
+  content: '>';
+  font-size: 3rem;
+  line-height: 3rem;
+  float: right;
+  margin-right: 3%;
+  margin-top: 18px;
+}
+
+div#global-container a.paroles > span.nbrs{
+  position: relative;
+  float: left;
+  width: 5%;
+  padding: 3% 4% 2% 3%;
+  font-size: 3rem;
+  line-height: 3rem;
+  margin-right: 3%;
+}
+
+div#global-container a.paroles > span.pInfo{
+  display: block;
+  float: left;
+  width: 72%;
+  padding: 0;
+  margin-top: 2%;
+  color: inherit;
+}
+
+div#global-container a.paroles > span.pInfo h3{
+  margin-bottom: 1%;
+}
+
+div#global-container a.paroles > span.pInfo h4, div#global-container a.paroles > span.pInfo h5{
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+div#global-container a.paroles > span.pInfo h5{
+  display: none;
+}
+
+/* -- GEN. PAROLES -- */
+
+a.paroles.blue > span.nbrs{
+  background-color: $cdp-blue;
+  color: white;
+}
+
+a.paroles.orange > span.nbrs{
+  background-color: $cdp-orange;
+  color: white;
+}
+
+a.paroles.green > span.nbrs{
+  background-color: $cdp-green;
+  color: white;
+}
+
+a.paroles.pink > span.nbrs{
+  background-color: $cdp-pink;
+  color: white;
+}
+
+h3.left{
+  margin: 0;
+  max-width: 100%;
+}
+
+h4.right{
+  margin: 0;
+  max-width: 100%;
+}
+
+a.paroles.blue:hover{
+  background-color: $cdp-blue !important;
+  color: white !important;
+}
+
+a.paroles.orange:hover{
+  background-color: $cdp-orange !important;
+  color: white !important;
+}
+
+a.paroles.green:hover{
+  background-color: $cdp-green !important;
+  color: white !important;
+}
+
+a.paroles.pink:hover{
+  background-color: $cdp-pink !important;
+  color: white !important;
+}
+
+
+@media only screen and (max-width: 770px) {
+
+  div#global-container a.paroles > span.nbrs{
+    font-size: 2.4rem;
+  }
+
+  div#global-container a.paroles > span.pInfo h3{
+    font-size: 1.3rem;
+  }
+
+  div#global-container a.paroles > span.pInfo h4, div#global-container a.paroles > span.pInfo h5{
+    font-size: 0.9rem;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 660px) {
+
+  div#global-container a.paroles > span.nbrs{
+    font-size: 2rem;
+    padding: 7% 4% 6% 3%;
+  }
+
+  div#global-container a.paroles > span.pInfo h3{
+    font-size: 1.3rem;
+  }
+
+  div#global-container a.paroles > span.pInfo h4, div#global-container a.paroles > span.pInfo h5{
+    font-size: 0.9rem;
+  }
+
+  div#global-container a.paroles:after{
+    margin-top: 7%;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 425px) {
+
+  body#paroles div#global-container h1{
+    width: 88%;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  div#global-container a.paroles > span.nbrs{
+    font-size: 2.4rem;
+    padding: 7% 5% 4% 3%;
+    width: 8%;
+  }
+
+  div#global-container a.paroles > span.pInfo h3{
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 1%;
+  }
+
+  div#global-container a.paroles > span.pInfo h3.uL{
+    margin-top: 6%;
+  }
+
+  div#global-container a.paroles > span.pInfo h4, div#global-container a.paroles > span.pInfo h5{
+    font-size: 0.8rem;
+  }
+
+  div#global-container a.paroles:after{
+    display: none;
+  }
+
+  div#global-container a.paroles > span.pInfo{
+    width: 80%;
+  }
+
+  a.paroles.blue{
+    background-color: $cdp-blue !important;
+    color: white !important;
+  }
+
+  a.paroles.orange{
+    background-color: $cdp-orange !important;
+    color: white !important;
+  }
+
+  a.paroles.green{
+    background-color: $cdp-green !important;
+    color: white !important;
+  }
+
+  a.paroles.pink{
+    background-color: $cdp-pink !important;
+    color: white !important;
+  }
+
+}

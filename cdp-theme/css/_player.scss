@@ -1,0 +1,227 @@
+nav#navigation div#player{
+  top: 0;
+  right: 0;
+  width: 30%;
+  max-height: 40px;
+  position: absolute;
+  background: url('images/transpBlack50.png') center top repeat;
+}
+
+nav#navigation div#player span#npTitle{
+  float: left;
+  text-align: left;
+  color: white;
+  width: 50%;
+  height: 25px;
+  padding: 9px 1% 5px 4%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12pt;
+}
+
+nav#navigation div#player a#btnPrev{
+  float: left;
+  color: white;
+  padding: 11px 5% 6px 1%;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+nav#navigation div#player a#btnPlayPause{
+  float: left;
+  font-size: 1.3em;
+  background-color: transparent;
+  color: white;
+  padding: 6px 3% 8px 5%;
+}
+
+nav#navigation div#player a#btnNext{
+  float: right;
+  color: white;
+  padding: 11px 5% 6px 5%;
+  background-color: transparent;
+  font-size: 1em;
+  cursor: not-allowed;
+}
+
+.disabled{
+  pointer-events: none;
+  cursor: default !important;
+  color: grey !important;
+}
+
+@media only screen and (max-width: 768px){
+
+  nav#navigation div#player a#btnPlayPause{
+    padding: 9px 2% 9px 5%;
+  }
+
+}
+
+@media only screen and (max-width: 425px){
+  nav#navigation div#player{
+    width: 50%;
+    max-height: 50px;
+  }
+
+  nav#navigation div#player span#npTitle{
+    width: 45%;
+  }
+
+  nav#navigation div#player a#btnPrev{
+    padding: 11px 4% 6px 1%;
+  }
+
+  nav#navigation div#player a#btnPlayPause{
+    padding: 9px 2% 9px 5%;
+  }
+
+  nav#navigation div#player a#btnNext{
+    padding: 11px 5% 6px 5%;
+  }
+}
+
+@media only screen and (max-width: 330px){
+
+  nav#navigation div#player{
+    width: 55%;
+  }
+
+}
+
+/* Audio Player Styles
+================================================== */
+
+/* Default / Desktop / Firefox */
+audio { margin: auto; display: block; width:50%; }
+#mainwrap { /* add box-shadow or other styles here */ }
+#plwrap { margin:0 auto; }
+#tracks { min-height:65px; position:relative; text-align:center; text-decoration:none; top:13px; }
+#extControl { display: block; margin: 20px auto; width: 50%; }
+#nowPlay { display:block; float: left; width: 100%; }
+#audiowrap,#audiomenu { background-color: transparent; margin: 0 auto; clear: left; display: block; }
+#npTitle { margin:0; padding:15px 0 5px 0; text-align:center; display: block; }
+#npAction { padding:21px; position:absolute; }
+#plList { margin:0; }
+#plList li { background-color: transparent; cursor:pointer; margin:0; padding:21px 0; }
+#plList li:hover { background-color: transparent; }
+.plItem { position:relative; }
+.plTitle { left:50px; overflow:hidden; position:absolute; right:65px; text-overflow:ellipsis; top:0; white-space:nowrap; }
+.plNum { padding-left:21px; width:25px; }
+.plLength { padding-left:21px; position:absolute; right:21px; top:0; }
+.plSel,.plSel:hover { background-color: transparent!important; cursor:default!important; }
+a[id^="btn"] { background-color: white; color: black; cursor:pointer; font-size:20px; margin:0; text-decoration:none; }
+a[id^="btn"]:last-child { margin-left:-4px; }
+a[id^="btn"]:hover,a[id^="btn"]:active { background-color: transparent; }
+a[id^="btn"]::-moz-focus-inner { border:0; padding:0; }
+
+/* IE 9 */
+html[data-useragent*="MSIE 9.0"] audio { outline:none; width: 100%; display: block; }
+html[data-useragent*="MSIE 9.0"] #audiowrap,#audiomenu { background-color:white; }
+html[data-useragent*="MSIE 9.0"] #tracks { min-height:57px; top:5px; }
+html[data-useragent*="MSIE 9.0"] a[id^="btn"] { background-color:#fff; }
+html[data-useragent*="MSIE 9.0"] a[id^="btn"]:hover { background-color:#cccccc; }
+html[data-useragent*="MSIE 9.0"] #plList li { background-color:#fff; }
+html[data-useragent*="MSIE 9.0"] #plList li:hover { background-color:#cccccc; }
+html[data-useragent*="MSIE 9.0"] .plSel,
+html[data-useragent*="MSIE 9.0"] .plSel:hover { background-color:#cccccc!important; }
+
+/* IE 10 */
+html[data-useragent*="MSIE 10.0"] audio { width: 100%; display: block; }
+html[data-useragent*="MSIE 10.0"] #audiowrap,#audiomenu { background-color:#fff; }
+html[data-useragent*="MSIE 10.0"] #tracks { min-height:60px; top:8px; }
+html[data-useragent*="MSIE 10.0"] a[id^="btn"] { background-color:#fff; }
+html[data-useragent*="MSIE 10.0"] a[id^="btn"]:hover { background-color:#ccc; }
+html[data-useragent*="MSIE 10.0"] #plList li { background-color:#fff; }
+html[data-useragent*="MSIE 10.0"] #plList li:hover { background-color:#ccc; }
+html[data-useragent*="MSIE 10.0"] .plSel,
+html[data-useragent*="MSIE 10.0"] .plSel:hover { background-color:#ccc!important; }
+
+/* IE 11 */
+html[data-useragent*="rv:11.0"] audio { width: 100%; display: block; }
+html[data-useragent*="rv:11.0"] #audiowrap,#audiomenu { background-color:#fff; }
+html[data-useragent*="rv:11.0"] #tracks { min-height:60px; top:8px; }
+html[data-useragent*="rv:11.0"] a[id^="btn"] { background-color:#fff; }
+html[data-useragent*="rv:11.0"] a[id^="btn"]:hover { background-color:#ccc; }
+html[data-useragent*="rv:11.0"] #plList li { background-color:#fff; }
+html[data-useragent*="rv:11.0"] #plList li:hover { background-color:#ccc; }
+html[data-useragent*="rv:11.0"] .plSel,
+html[data-useragent*="rv:11.0"] .plSel:hover { background-color:#ccc!important; }
+
+/* All Apple Products */
+html[data-useragent*="Apple"] audio { width: 100%; display: block; }
+html[data-useragent*="Apple"] #audiowrap,#audiomenu { background-color:#fff; }
+html[data-useragent*="Apple"] #tracks { min-height:64px; top:12px; }
+html[data-useragent*="Apple"] a[id^="btn"] { background-color:#fff; }
+html[data-useragent*="Apple"] a[id^="btn"]:hover { background-color:#ccc; }
+html[data-useragent*="Apple"] #plList li { background-color:#fff; }
+html[data-useragent*="Apple"] #plList li:hover { background-color:#ccc; }
+html[data-useragent*="Apple"] .plSel,
+html[data-useragent*="Apple"] .plSel:hover { background-color:#ccc!important; }
+
+/* IOS 7 */
+html[data-useragent*="OS 7"] body { color:#373837; }
+html[data-useragent*="OS 7"] audio { width: 100%; display: block; }
+html[data-useragent*="OS 7"] #audiowrap,#audiomenu { background-color:#ddd; }
+html[data-useragent*="OS 7"] #tracks { min-height:75px; top:23px; }
+html[data-useragent*="OS 7"] a[id^="btn"] { background-color:#ddd; color:#373837; }
+html[data-useragent*="OS 7"] a[id^="btn"]:hover { background-color:#eee; }
+html[data-useragent*="OS 7"] #plList li { background-color:#ddd; }
+html[data-useragent*="OS 7"] #plList li:hover { background-color:#eee; }
+html[data-useragent*="OS 7"] .plSel,
+html[data-useragent*="OS 7"] .plSel:hover { background-color:#eee!important; }
+
+/* Chrome */
+html[data-useragent*="Chrome"] body { color:#373837; }
+html[data-useragent*="Chrome"] audio { width: 100%; display: block; }
+html[data-useragent*="Chrome"] #tracks { min-height:64px; top:12px; }
+html[data-useragent*="Chrome"] #audiowrap,#audiomenu { background-color:#fff; }
+html[data-useragent*="Chrome"] a[id^="btn"] { background-color:#fff; }
+html[data-useragent*="Chrome"] a[id^="btn"]:hover { background-color:#ccc; }
+html[data-useragent*="Chrome"] #plList li { background-color:#fff; }
+html[data-useragent*="Chrome"] #plList li:hover { background-color:#ccc; }
+html[data-useragent*="Chrome"] .plSel,
+html[data-useragent*="Chrome"] .plSel:hover { background-color:#ccc!important; }
+
+/* Chrome / Android / Tablet */
+html[data-useragent*="Chrome"][data-useragent*="Android"] audio { margin: 0; width:100%; }
+
+
+/* Audio Player Media Queries
+================================================== */
+
+/* Tablet Portrait */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 9.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 10.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="rv:11.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="OS 7"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"][data-useragent*="Android"] audio { width: 100%; display: block; }
+}
+
+/* Mobile Landscape */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 9.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 10.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="rv:11.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="OS 7"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"][data-useragent*="Mobile"] audio { width: 100%; display: block; }
+  #npTitle { width:100%; }
+}
+
+/* Mobile Portrait */
+@media only screen and (max-width: 479px) {
+  audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 9.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="MSIE 10.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="rv:11.0"] audio { width: 100%; display: block; }
+  html[data-useragent*="OS 7"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"] audio { width: 100%; display: block; }
+  html[data-useragent*="Chrome"][data-useragent*="Mobile"] audio { width: 100%; display: block; }
+  #npTitle { width:100%; }
+}
