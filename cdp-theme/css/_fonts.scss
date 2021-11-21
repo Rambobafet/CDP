@@ -1,35 +1,51 @@
 @font-face {
-  font-family: avenir;
-  src: url('fonts/Avenir-Book.ttf');
+  font-family: 'Avenir-Book';
+  src: url('fonts/Avenir-Book.woff2') format('woff2'),
+  url('fonts/Avenir-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('fonts/ITCAvantGardeStd-XLt.woff2') format('woff2'),
+  url('fonts/ITCAvantGardeStd-XLt.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('fonts/ITCAvantGardeStd-Md.woff2') format('woff2'),
+  url('fonts/ITCAvantGardeStd-Md.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('fonts/ITCAvantGardeStd-Demi.woff2') format('woff2'),
+  url('fonts/ITCAvantGardeStd-Demi.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('fonts/ITCAvantGardeStd-Bk.woff2') format('woff2'),
+  url('fonts/ITCAvantGardeStd-Bk.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: centuryGothic;
   src: url('fonts/CenturyGothic');
-}
-
-@font-face {
-  font-family: ITCavtGd;
-  src: url('fonts/ITCAvantGardeStd-XLt.otf');
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: ITCavtGd;
-  src: url('fonts/ITCAvantGardeStd-Md.otf');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: ITCavtGd;
-  src: url('fonts/ITCAvantGardeStd-Demi.otf');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: ITCavtGd;
-  src: url('fonts/ITCAvantGardeStd-Bk.otf');
-  font-weight: 500;
 }
 
 @font-face {

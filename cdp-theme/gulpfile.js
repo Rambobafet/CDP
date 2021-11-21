@@ -11,7 +11,7 @@ const { series } = require('gulp'),
 
 function clean() {
     return del([
-        './style.css',
+        './_style.scss',
     ]);
 }
 

@@ -4,6 +4,17 @@ Author: Guillaume Mellet & Sébastien Picq
 Version: 1.0
 */
 
-@import './_reset.css';
-@import './_fonts';
-@import './style.css';
+@import 'variables';
+@import '_reset.css';
+@import 'fonts';
+@import 'layout';
+@import 'lyrics';
+@import 'events';
+@import 'band';
+@import 'player';
+@import 'footer';
+@import 'navigation';
+@import 'form';
+
+/* Highlight Styles */
+::selection { background-color:#262223; color:#fff; }

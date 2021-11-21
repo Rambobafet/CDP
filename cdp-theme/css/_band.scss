@@ -1,0 +1,90 @@
+/* WIP - PRESENTATION */
+
+section#group, section#members{
+  position: relative;
+  width: 80%;
+  height: auto;
+  display: block;
+  float: left;
+  left: 10%;
+}
+
+section#members{
+  margin-top: 50px;
+}
+
+.presentation h2{
+  margin-bottom: 20px;
+}
+
+section#group p:nth-of-type(2){
+  margin-top: 10px;
+}
+
+section#members div#presentation{
+  position: relative;
+  width: 100%;
+  display: block;
+  height: 250px;
+  margin-top: 30px;
+}
+
+section#members div#presentation:nth-of-type(1){
+  margin-top: 0;
+}
+
+section#members div#presentation img{
+  position: absolute;
+  width: 25%;
+}
+
+section#members div#presentation h3{
+  font-size: 1.3rem;
+  font-weight: 300;
+  width: 71%;
+}
+
+section#members div#presentation p{
+  font-size: 1.1rem;
+  max-width: 100%;
+  width: 71%;
+  margin-top: 15px;
+}
+
+section#members div#presentation h3:nth-child(2n+2), section#members div#presentation p:nth-child(2n+1){
+  margin-left: 3%;
+  float:  right;
+}
+
+section#members div#presentation h3:nth-child(2n+1), section#members div#presentation p:nth-child(2n+2){
+  margin-right: 3%;
+  text-align: right;
+  float: left;
+}
+
+@media only screen and (max-width: 660px){
+
+  section#group, section#members{
+    float: none !important;
+  }
+
+  section#members div#presentation img{
+    display: none;
+  }
+
+  section#members div#presentation h3, section#members div#presentation p{
+    width: 100%;
+  }
+
+  section#members div#presentation h3:nth-child(2n+2), section#members div#presentation p:nth-child(2n+1){
+    margin-left: 0;
+    float:  left;
+  }
+
+  section#members div#presentation h3:nth-child(2n+1), section#members div#presentation p:nth-child(2n+2){
+    margin-right: 0;
+    text-align: left;
+    float: left;
+  }
+
+}

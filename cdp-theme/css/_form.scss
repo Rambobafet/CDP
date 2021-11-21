@@ -1,0 +1,109 @@
+/* --- FORMULAIRE --- */
+div#global-container > section#inner-container form#mailForm{
+  width: 100%;
+  position: relative;
+  height: 95px;
+  display: block;
+  margin: 5% 0 0 0;
+  padding-top: 1%
+}
+
+div#global-container > section#inner-container form#mailForm span{
+  margin: 0;
+}
+
+div#global-container > section#inner-container form#mailForm span.fLeft{
+  width: 70%;
+  float: left;
+}
+
+div#global-container > section#inner-container form#mailForm span.fRight{
+  width: 28%;
+  float: right;
+  text-align: right;
+}
+
+div#global-container > section#inner-container form#mailForm span input[type=text]{
+  height: 44px;
+  width: 100%;
+  padding: 0 1%;
+  border: 1px solid;
+  font-family: Helvetica, sans-serif;
+  font-weight: inherit;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+div#global-container > section#inner-container form#mailForm span input[type=text]::placeholder{
+  color: #999;
+}
+
+div#global-container > section#inner-container form#mailForm span input[type=submit]{
+  text-decoration: none;
+  padding: 12px 15px 10px 15px;
+  font-weight: inherit;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+div#global-container > section#inner-container p#response
+{
+  text-align: center;
+  padding: 12px 10px 10px 10px;
+  display: block;
+  border: 1px solid;
+  font-size: 1.3rem;
+  margin-top: 1%;
+}
+
+div#global-container > section#inner-container p#response.success{
+  border-color: $cdp-green;
+  background-color: #e9f3d8;
+  color: #435c1c;
+}
+
+div#global-container > section#inner-container p#response.failure{
+  border-color: #cb2909;
+  background-color: #fdcec4;
+  color: #791805;
+}
+
+@media only screen and (max-width: 770px) {
+  div#global-container > section#inner-container form#mailForm span input[type=text]{
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  div#global-container > section#inner-container form#mailForm{
+    height: 135px;
+  }
+
+  div#global-container > section#inner-container form#mailForm span.fLeft{
+    width: 93%;
+  }
+
+  div#global-container > section#inner-container form#mailForm span.fRight{
+    width: 96%;
+    text-align: left;
+    margin-right: 4%;
+  }
+
+  div#global-container > section#inner-container form#mailForm span input[type=text]{
+    height: 40px;
+    padding: 0 0 0 1%;
+    font-size: 1.1rem;
+  }
+
+  div#global-container > section#inner-container form#mailForm span input[type=submit]{
+    padding: 12px 0 10px 0;
+    width: 98.3%;
+  }
+
+  div#global-container > section#inner-container p#response{
+    font-size: 1.1rem;
+    width: 87%;
+  }
+}
