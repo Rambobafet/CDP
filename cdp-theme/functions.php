@@ -8,8 +8,8 @@ register_nav_menus( array(
 	'footer' => 'Bas de page',
 ) );
 
-wp_enqueue_style( 'main', './style.css', [], true, 'screen');
+wp_enqueue_style( 'main', get_template_directory_uri() . '/style.css', [], true, 'screen');
 
 wp_enqueue_script('jquery');
-wp_enqueue_script( 'toolkit', '.js/toolkit', ['jquery']);
-wp_enqueue_script( 'player', '.js/player', ['jquery'; 'toolkit']);
+wp_enqueue_script( 'toolkit', get_template_directory_uri() . '/js/toolkit', ['jquery']);
+wp_enqueue_script( 'player', get_template_directory_uri() . '/js/player', ['jquery', 'toolkit']);

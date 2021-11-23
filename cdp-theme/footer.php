@@ -4,7 +4,7 @@
             <span id="copyright"><? echo date("Y"); ?> - Les Conteuses de Pas</span>
             <span id="legal">
                 <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/" class="cc">
-                    <img src="css/images/by_nc_sa.jpg" lang="en" alt="Creative Commons - By, non commercial, share alike" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/css/images/by_nc_sa.jpg" lang="en" alt="Creative Commons - By, non commercial, share alike" />
                 </a>
             </span>
         </div>

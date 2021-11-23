@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="css/images/CDP_favicon.ico" />
+    <link rel="icon" href="<?php echo get_template_directory_uri();?>/css/images/CDP_favicon.ico" />
 
     <!-- TODO: still used? -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -16,7 +16,7 @@
 
     <nav id="navigation" aria-label="Navigation Principale">
         <a id="logo" href="<?php echo home_url( '/' ); ?>" aria-label="Conteuses de Pas - retour à l'accueil">
-            <img src="css/images/C_logo.svg" alt="Conteuses de Pas">
+            <img src="<?php echo get_template_directory_uri();?>/css/images/C_logo.svg" alt="Conteuses de Pas">
         </a>
         <button class="fa fa-bars fa-lg" id="mobNavBtn" aria-expanded="false">
             Ouvrir le menu mobile
