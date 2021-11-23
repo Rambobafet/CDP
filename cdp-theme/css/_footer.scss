@@ -5,7 +5,7 @@ footer{
   padding: 4% 0;
   display: block;
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: inherit;
   text-align: inherit;
   line-height: inherit;
@@ -75,6 +75,17 @@ footer div#right-panel ul#footer-nav li a{
   text-transform: uppercase;
   font-family: $primaryFont;
   font-weight: 300;
+  margin-bottom: $space-l;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+footer div#right-panel ul#footer-nav li:nth-child(even) {
+  margin-left: $space-l;
 }
 
 footer div#right-panel ul#footer-nav li a:before{
