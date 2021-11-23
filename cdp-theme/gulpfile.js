@@ -1,4 +1,6 @@
-const { series } = require('gulp'),
+'use strict';
+
+const { series, watch, src } = require('gulp'),
     gulp = require('gulp'),
     sass = require('gulp-sass')(require('sass')),
     autoprefixer = require('gulp-autoprefixer'),
@@ -16,7 +18,7 @@ function clean() {
 }
 
 function css() {
-    return gulp.src('./css/main.scss')
+    return src('./css/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'edge'}))
@@ -36,4 +38,12 @@ Version: 1.0
         .pipe(browserSync.stream());
 }
 
-exports.default = series(clean, css)
+const build = series(clean, css);
+
+function watchFiles() {
+    watch('./css/*.css', { ignoreInitial: false }, build);
+    watch('./css/*.scss', { ignoreInitial: false }, build);
+}
+
+exports.watch = watchFiles;
+exports.default = build;

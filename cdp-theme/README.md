@@ -10,5 +10,6 @@ __Pré-requis__
 - Node
 - Yarn
 
-Génération :
-`yarn build`
+Génération : `yarn build`
+
+Development: `yarn start`
