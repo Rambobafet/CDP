@@ -173,7 +173,7 @@ html{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: url('images/BG_Site_epure.jpg') #fff5ea center top no-repeat;
+	background: url('css/images/BG_Site_epure.jpg') #fff5ea center top no-repeat;
 	height: 100%;
 	width: 100%;
 }
@@ -310,7 +310,7 @@ div#global-container div#fond-logo-titre{
 	height: 100px;
 	position: relative;
 	display: flex;
-	background: url('images/bandeau-titre_900.png') center center no-repeat;
+	background: url('css/images/bandeau-titre_900.png') center center no-repeat;
 	margin: 30px 0;
 }
 
@@ -320,7 +320,7 @@ div#global-container div#fond-logo-titre > span#logo-titre{
 	width: 50%;
 	height: 70%;
 	margin: 15px auto;
-	background: url('images/CDP-logo-titre_white.svg') center center no-repeat;
+	background: url('css/images/CDP-logo-titre_white.svg') center center no-repeat;
 }
 
 @media only screen and (max-width: 425px) {
