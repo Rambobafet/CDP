@@ -29,3 +29,15 @@ function cdp_gutenberg_scripts() {
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'cdp_gutenberg_scripts' );
+
+function cdp_theme_colors() {
+	add_theme_support( 'editor-color-palette',
+		array(
+			array( 'name' => 'Bleu', 'slug'  => 'cdp_blue', 'color' => '#014fff' ),
+			array( 'name' => 'Rose', 'slug'  => 'cdp_pink', 'color' => '#e7308f' ),
+			array( 'name' => 'Vert', 'slug'  => 'cdp_green', 'color' => '#8fc43c' ),
+			array( 'name' => 'Orange', 'slug'  => 'cdp_orange', 'color' => '#ea7700' ),
+		)
+	);
+}
+add_action( 'after_setup_theme', 'cdp_theme_colors' );

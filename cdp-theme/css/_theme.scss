@@ -1,5 +1,65 @@
 /* Style used with Wordpress editor (custom classes, inside .contribution etc.) */
 
+.has-cdp-pink-color { color: $cdp-pink; }
+.has-cdp-blue-color { color: $cdp-blue; }
+.has-cdp-orange-color { color: $cdp-orange; }
+.has-cdp-green-color { color: $cdp-green; }
+
+.has-cdp-pink-background-color { background: $cdp-pink; }
+.has-cdp-blue-background-color { background: $cdp-blue; }
+.has-cdp-orange-background-color { background: $cdp-orange; }
+.has-cdp-green-background-color { background: $cdp-green; }
+
+.contribution {
+  blockquote {
+    display: flex;
+    position: relative;
+
+    &::before {
+      content: '\00AB';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 4rem;
+    }
+
+    &::after {
+      content: '\00BB';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 4rem;
+    }
+
+    padding-left: $space-xl;
+    padding-right: $space-xl;
+    margin-bottom: $space-l;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    &:hover,
+    &:focus {
+      border-bottom-style: dotted;
+    }
+  }
+}
+
 .wp-block-group.is-style-highlighted {
   position: relative;
   padding: 2%;
