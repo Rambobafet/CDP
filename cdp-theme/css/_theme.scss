@@ -1,0 +1,36 @@
+/* Style used with Wordpress editor (custom classes, inside .contribution etc.) */
+
+.wp-block-group.is-style-highlighted {
+  position: relative;
+  padding: 2%;
+  margin: -8% auto 4% auto;
+  font-size: 2rem;
+
+  &::before {
+    content: '';
+    background: #fff;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .wp-block-group__inner-container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.editor-styles-wrapper {
+  .wp-block-group.is-style-highlighted {
+    margin-top: -10px;
+  }
+}
+
+.contribution {
+  p:not(:last-of-type) {
+    margin-bottom: 1.1em;
+  }
+}

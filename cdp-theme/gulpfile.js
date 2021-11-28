@@ -41,7 +41,6 @@ Version: 1.0
 const build = series(clean, css);
 
 function watchFiles() {
-    watch('./css/*.css', { ignoreInitial: false }, build);
     watch('./css/*.scss', { ignoreInitial: false }, build);
 }
 
