@@ -213,5 +213,95 @@ a.paroles.pink:hover{
     background-color: $cdp-pink !important;
     color: white !important;
   }
+}
 
+@mixin lyricColor($color) {
+  .lyric__trackNumber {
+    background: $color;
+  }
+
+  .lyric__link:hover,
+  .lyric__link:focus {
+
+    color: #fff;
+    background: $color;
+    ~ .lyric__information {
+      background: $color;
+      color: #fff;
+    }
+  }
+}
+
+.lyric {
+  position: relative;
+  display: flex;
+  flex: 1;
+  margin: 0 10% $space-m;
+
+  @include lyricColor($cdp-green);
+
+  &:nth-of-type(4n+2) {
+    @include lyricColor($cdp-orange);
+  }
+
+  &:nth-of-type(4n+3) {
+    @include lyricColor($cdp-blue);
+  }
+
+  &:nth-of-type(4n+4) {
+    @include lyricColor($cdp-pink);
+  }
+}
+
+.lyric__album {
+  color: $cdp-orange;
+  font-weight: 100;
+}
+
+.lyric__trackNumber {
+  font-size: 3rem;
+  line-height: 1;
+  color: #fff;
+  padding: $space-l $space-l $space-m;
+}
+
+.lyric__information {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: $space-l;
+}
+
+.lyric__name {
+  font-size: 2rem;
+}
+
+.lyric__dance {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.lyric__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 3rem;
+  order: 1;
+  padding-right: $space-l;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 }

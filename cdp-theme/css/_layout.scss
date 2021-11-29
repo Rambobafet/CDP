@@ -18,7 +18,7 @@ body {
 }
 
 h1{
-	font-size: 2.2rem;
+	font-size: 3.2rem;
 }
 
 h2{
@@ -224,6 +224,7 @@ div#global-container{
 	height: auto;
 	display: block;
 	margin-top: 3%;
+	padding-bottom: $space-l;
 }
 
 div#global-container h1{
