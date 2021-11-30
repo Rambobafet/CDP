@@ -1,55 +1,54 @@
 <?php get_header(); ?>
-	<h1>Paroles</h1>
+	<h1>Textes et sources des morceaux</h1>
 
-	/*
-	1. Get categories used by "parole" post type
-	2. Loop in each categories
-	3. order each item by song number (asc)
-	4. loop in ordered song
-	*/
+<?php
+$albums = get_terms( array(
+    'taxonomy' => 'album',
+    'hide_empty' => true,
+) );
 
-	<?php
-        $cats = get_categories(
-            array(
-                'taxonomy' => 'parole',
-                'orderby' => 'name',
-                'order'   => 'ASC'
-            )
-        );
+foreach ( $albums as $album ):
+    $ID = $album->term_id;
+?>
 
-       foreach($cats as $cat) {
+    <h2 class="lyric__album"><?php echo $album->name; ?></h2>
 
-        $args = array('post_type' => 'parole', 'posts_per_page' => -1, 'cat' => $cat->ID);
-        $loop = new WP_Query($args);
-        if ($loop->have_posts()):
-        ?>
+<?php
+    $the_query = new WP_Query(
+        array(
+            'post_type' => 'parole',
+            'posts_per_page'	=> -1,
+            'meta_key'			=> 'numero_de_piste',
+            'orderby'			=> 'meta_value',
+          'order'				=> 'ASC',
+            'tax_query' => array(
+                    array(
+                        'taxonomy' => 'album',
+                        'field'    => 'term_id',
+                        'terms'    => $ID,
+                    ),
+                ),
+        )
+    );
 
-        <h2><?php $cat->the_title()?></h2>
-        <ol>
+    if ( $the_query->have_posts() ) :
+        while ( $the_query->have_posts() ) :
+            $the_query->the_post();
+?>
 
-        <?php
+            <article class="lyric">
+                <a class="lyric__link" href="<?php echo get_field('lien_du_pdf'); ?>">
+                    <span class="visually-hidden">Télécharger les paroles de <span lang="<?php echo get_field('langue'); ?>">"<?php echo get_the_title(); ?>"</span></span>
+                    <span role="presentation">></span>
+                </a>
+                <p class="lyric__trackNumber"><?php echo get_field('numero_de_piste'); ?></p>
+                <div class="lyric__information">
+                    <h3 class="lyric__name" lang="<?php echo get_field('langue'); ?>"><?php echo get_the_title(); ?></h3>
+                    <p class="lyric__dance"><?php echo get_field('danse'); ?></p>
+                </div>
+            </article>
 
-            $orderedLyrics = usort($loop, function ($item1, $item2) {
-                return $item1['numero_de_piste'] <=> $item2['numero_de_piste'];
-            });
-
-            foreach ($orderedLyrics as $lyric) :
-                var_dump($lyric);
-            ?>
-                <li>
-                    <a href="paroles/1-ah-si-tu-amusons-nous.pdf" target="_blank" rel="noopener noreferrer" class="paroles"  title="Télécharger le PDF : <?php <?php echo $lyric['title']; ?> ?>">
-                        <span class="nbrs"><?php echo $lyric['numero_de_piste']; ?></span>
-                        <span class="pInfo">
-                            <h3 lang="<?php echo $lyric['lang']; ?>"><?php echo $lyric['title']; ?></h3>
-                            <p class="left"><?php echo $lyric['dance']; ?></p>
-                            <p class="right">04:21</p>
-                        </span>
-                    </a>
-                </li>
-        <?php
-            endforeach;
-        endif;
-       ?>
-    </ol>
-
-<?php get_footer(); ?>
+            <?php
+        endwhile; endif;
+endforeach;
+?>
