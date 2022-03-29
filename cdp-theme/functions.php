@@ -1,4 +1,5 @@
 <?php
+require_once get_stylesheet_directory() . '/aria-walker-nav-menu.php';
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
@@ -8,11 +9,10 @@ register_nav_menus( array(
 	'footer' => 'Bas de page',
 ) );
 
-wp_enqueue_style( 'main', get_template_directory_uri() . '/style.css', [], true, 'screen');
-
 wp_enqueue_script('jquery');
-wp_enqueue_script( 'toolkit', get_template_directory_uri() . '/js/toolkit', ['jquery']);
-wp_enqueue_script( 'player', get_template_directory_uri() . '/js/player', ['jquery', 'toolkit']);
+wp_enqueue_script( 'player', get_template_directory_uri() . '/js/player', ['jquery']);
+wp_enqueue_script( 'ariaMenu', get_template_directory_uri() . '/js/aria-menu', ['jquery']);
+wp_enqueue_script( 'mobileMenu', get_template_directory_uri() . '/js/mobileMenu', ['jquery']);
 
 
 /**
@@ -41,3 +41,6 @@ function cdp_theme_colors() {
 	);
 }
 add_action( 'after_setup_theme', 'cdp_theme_colors' );
+
+add_theme_support('editor-styles');
+add_editor_style( 'style.css' );

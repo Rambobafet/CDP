@@ -1,231 +1,126 @@
-nav#navigation{
-  width: 100%;
-  position: relative;
-  background: url('css/images/bandeau-titre_900.png') $grey-100 center center no-repeat;
-  display:flex;
-  align-items: stretch;
+.navigation__mobileBtn {
+  border: none;
+  background: none;
+
+  @media only screen and (min-width: $tablet) {
+    display: none;
+  }
 }
 
-#navigation {
-  ul {
-    display: flex;
-    align-items: stretch;
-    height: 100%;
-  }
-
-  li {
-    list-style: none;
-  }
+.navigation {
+  position: relative;
+  background: url('css/images/bandeau-titre_900.png') $grey-100 center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: stretch;
 
   a {
-    color: #000;
     display: flex;
-    height: 100%;
     align-items: center;
     text-decoration: none;
-    padding: 0 $space-s;
+    color: $grey-900;
+    padding: 5px 10px;
+    font-size: 2rem;
 
     &:hover,
     &:focus {
-      color: #fff;
-      background-color:rgba(0,0,0,0.75);
+      background: rgba(0, 0, 0, 0.75);
+      color: $grey-100;
     }
   }
 }
 
-
-nav#navigation a#logo {
-  padding: 0;
-  display: block;
-  float: left;
-  position: relative;
-  height: 40px;
+.navigation__logo {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
 }
 
-nav#navigation #mobNavBtn{
-  display: none;
-}
-
-nav#navigation div#mobNavScn{
-  position: fixed;
-  left: 0;
-  top: 40px;
-  width: 100%;
-  height: calc(100% - 40px);
-  background-color: $grey-100;
-  z-index: 100;
-}
-
-nav#navigation div#mobNavScn div#mobNavHead{
+.closeMobileMenu {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-}
-
-nav#navigation div#mobNavScn div#mobNavHead span#menuTitle{
-  position: relative;
   top: 10px;
-  left: 20px;
-  text-transform: uppercase;
-  color: black;
-}
+  right: 10px;
 
-nav#navigation div#mobNavScn div#mobNavHead span#mobNavClose{
-  position: relative;
-  right: 15px;
-  top: 7px;
-  float: right;
-  font-weight: 100;
-  cursor: pointer;
-}
-
-nav#navigation div#mobNavScn div#mobNavHead span#mobNavClose::after{
-  content: "X";
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 1.7rem;
-  position: relative;
-  top: 3px;
-  padding-left: 4px;
-}
-
-nav#navigation div#mobNavScn div#mobNavRightPanel{
-  position: absolute;
-  top: 50px;
-  right: 0;
-  width: 50%;
-  height: 40px;
-}
-
-nav#navigation div#mobNavScn div#mobNavRightPanel ul#social{
-  display: block;
-  list-style-type: none;
-  max-height: 40px;
-  padding: 0 10px;
-}
-
-nav#navigation div#mobNavScn div#mobNavRightPanel ul#social li{
-  display: inline-block;
-  margin-left: 5%;
-  width: 40px;
-  height: 40px;
-  background-color: grey;
-}
-
-nav#navigation div#mobNavScn div#mobNavRightPanel ul#social li a {
-  display: block;
-  color: white;
-}
-
-nav#navigation a#logo img{
-  height: 30px;
-  background: url('css/images/transpBlack50.png') center center repeat;
-  padding: 5px 10px;
-}
-
-nav#navigation > ul {
-  width: 80%;
-  height: 30px;
-}
-
-nav#navigation > ul > li {
-  display: inline-block;
-  height: 40px;
-  float: left;
-}
-
-nav#navigation > ul > li:hover, nav#navigation > ul > li.active{
-  background: url('css/images/transpBlack50.png') center center repeat;
-}
-
-nav#navigation > ul > li a {
-  padding: 8px 15px 6px 15px;
-  display: block;
-  clear: left;
-  color:  black;
-}
-
-nav#navigation > ul > li a::first-letter{
-  text-transform: uppercase;
-}
-
-nav#navigation > ul > li a:hover, nav#navigation > ul > li.active a{
-  color: white;
-}
-
-@media only screen and (max-width: 660px) {
-  .desktop{
+  @media (min-width: $tablet) {
     display: none;
   }
+}
 
-  .mobile{
-    display: block;
-  }
+.mainNavigation {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: calc(100vw - 20px);
+  overflow: auto;
+  background: $grey-100;
+  padding: 20px 10px;
 
-  nav#navigation{
-    position: fixed;
-    top: 0;
-    left:  0;
-    z-index: 100;
-  }
-
-  nav#navigation #mobNavBtn{
-    display: block;
-    float: left;
-    font-size:  1.9em;
-    padding: 8px;
-  }
-
-  nav#navigation > ul {
-    width: 45%;
+  @media only screen and (min-width: $tablet) {
+    overflow: visible;
+    position: static;
+    padding: 0;
+    display: block !important; // surcharge JS
+    background: transparent;
     height: auto;
-    position: absolute;
-    top: 90px;
-    left:  0;
-    z-index: 200;
+    width: auto;
   }
 
-  nav#navigation > ul > li {
-    display: block;
-    height: auto;
-    width: 100%;
-    max-height: 40px;
+  .menu {
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+    }
   }
 
-  nav#navigation > ul > li a {
-    border-left:  2px solid;
-    display: block;
-    clear: left;
-    font-weight: 300;
+  li {
+    @media only screen and (min-width: $tablet) {
+      display: flex;
+      align-items: stretch;
+    }
+  }
+}
+
+.mainNavigationList {
+  @media only screen and (min-width: $tablet) {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+.mainNavigation {
+  .sub-menu {
+    padding-left: 20px;
+
+    @media only screen and (min-width: $tablet) {
+      display: none;
+
+      position: absolute;
+      top: 100%;
+      background: #fff;
+      z-index: 1;
+
+      padding-left: 0;
+      @media only screen and (min-width: $tablet) {
+      }
+
+      .menu-item {
+        min-width: 250px;
+        display: block;
+      }
+    }
   }
 
-  nav#navigation > ul > li a:hover{
-    border-bottom: none;
+  li[aria-haspopup="true"] {
+    position: relative;
   }
 
-  nav#navigation > ul > li:hover, nav#navigation > ul > li.active{
-    background: none;
-  }
+  li[aria-expanded="true"] {
+    .sub-menu {
+      display: block;
 
-  nav#navigation > ul > li:hover, nav#navigation > ul > li.active a{
-    color: black;
-  }
-
-  nav#navigation div#mobNavScn div.menuPlayer{
-    position: absolute;
-    bottom: 0;
-    border-top: 2px solid $cdp-blue;
-    width: 100%;
-  }
-
-  nav#navigation div#mobNavScn div.menuPlayer div#plwrap{
-    max-height: 30%;
-    overflow: scroll;
-  }
-
-  nav#navigation div#mobNavScn div.menuPlayer div#plwrap ul#plList li{
-    padding: 15px 0;
+    }
   }
 }
