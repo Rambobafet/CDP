@@ -190,9 +190,12 @@ body {
 }
 
 .globalWrapper {
-  width: 900px;
-  margin: 0 auto;
   background: $grey-100;
+
+  @media only screen and (min-width: $tablet) {
+    width: 900px;
+    margin: 0 auto;
+  }
 }
 
 a.fa-map {
