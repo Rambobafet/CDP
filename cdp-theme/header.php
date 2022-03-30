@@ -4,9 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo get_template_directory_uri();?>/css/images/CDP_favicon.ico" />
-
-    <!-- TODO: still used? -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/style.css" type="text/css" media="all">
 
     <?php wp_head(); ?>
 </head>
@@ -14,20 +12,25 @@
 <body>
     <?php wp_body_open(); ?>
     <div class="globalWrapper">
-        <nav id="navigation" aria-label="Navigation Principale">
-            <a id="logo" href="<?php echo home_url( '/' ); ?>" aria-label="Conteuses de Pas - retour à l'accueil">
-                <img src="<?php echo get_template_directory_uri();?>/css/images/C_logo.svg" alt="Conteuses de Pas">
+        <nav class="collapse  navbar-collapse navigation" role="navigation" id="navigation" aria-label="Navigation Principale">
+            <a id="logo" class="navigation__logo" href="<?php echo home_url( '/' ); ?>" aria-label="Conteuses de Pas - retour à l'accueil">
+                <img src="<?php echo get_template_directory_uri();?>/css/images/C_logo.svg" alt="Conteuses de Pas" height="22" width="21">
             </a>
-            <button class="fa fa-bars fa-lg" id="mobNavBtn" aria-expanded="false">
-                Ouvrir le menu mobile
+            <button class="fa fa-bars fa-lg navigation__mobileBtn" id="mobNavBtn" aria-expanded="false">
+                <span class="a11y-hidden">Ouvrir le menu mobile</span>
             </button>
+
             <?php
                 wp_nav_menu( array(
                     'theme_location' => 'main',
-                    'menu_class' => 'desktop mainNavigation',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s"><li><a href="'.get_bloginfo('url').'"><span class="visually-hidden">Accueil</span><i class="fa fa-home" role="presentation"></i></a></li>%3$s</ul>'
+                    'menu_class' => 'desktop mainNavigationList',
+                    'container' => false,
+	                'walker' => new Aria_Walker_Nav_Menu(),
+                    'items_wrap' => '<div class="mainNavigation"><button class="closeMobileMenu">Fermer le menu</button><ul id="%1$s" class="%2$s"><li><a href="'.get_bloginfo('url').'"><span class="visually-hidden">Accueil</span><i class="fa fa-home" role="presentation"></i></a></li>%3$s</ul></div>'
                 ));
              ?>
+
+
             <div class="player">
                 <span id="npTitle" class="player__title"></span>
                 <div class="player__actions">

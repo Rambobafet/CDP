@@ -13,7 +13,7 @@ b.setAttribute('data-platform', navigator.platform );
 // Inspiration: http://jonhall.info/how_to/create_a_playlist_for_html5_audio
 // Mythium Archive: https://archive.org/details/mythium/
 jQuery(function ($) {
-    var supportsAudio = !! document.createElement('audio').canPlayType;
+    var supportsAudio = !!document.createElement('audio').canPlayType;
     if (supportsAudio) {
         var index = 0,
             playing = false;
