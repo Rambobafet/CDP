@@ -1,5 +1,6 @@
 <?php
 require_once get_stylesheet_directory() . '/aria-walker-nav-menu.php';
+require_once get_stylesheet_directory() . '/CONSTANT.php';
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
@@ -44,3 +45,13 @@ add_action( 'after_setup_theme', 'cdp_theme_colors' );
 
 add_theme_support('editor-styles');
 add_editor_style( 'style.css' );
+
+function my_acf_google_map_api( $api ){
+
+	$api['key'] = GMAPS_API_KEY;
+
+	return $api;
+
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
