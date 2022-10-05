@@ -5,6 +5,14 @@ require_once get_stylesheet_directory() . '/CONSTANT.php';
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
+function admin_css() {
+	$admin_handle = 'admin_css';
+	$admin_stylesheet = get_template_directory_uri() . '/admin.css';
+
+	wp_enqueue_style($admin_handle, $admin_stylesheet);
+}
+add_action('admin_print_styles', 'admin_css', 11);
+
 register_nav_menus( array(
 	'main' => 'Menu Principal',
 	'footer' => 'Bas de page',
@@ -55,3 +63,4 @@ function my_acf_google_map_api( $api ){
 }
 
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+add_theme_support( 'title-tag' );
