@@ -18,6 +18,7 @@ Version: 1.0
 @import 'footer';
 @import 'navigation';
 @import 'form';
+@import 'typo';
 
 /* Highlight Styles */
-::selection { background-color:#262223; color:#fff; }
+::selection { background-color:#262223; color:#fff !important; }

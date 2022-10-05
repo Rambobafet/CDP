@@ -187,6 +187,7 @@ body {
   font-family: $primaryFont;
   font-size: 1.6rem;
   font-weight: 100;
+  overflow: auto; // used for WP bloc editor
 }
 
 .globalWrapper {
