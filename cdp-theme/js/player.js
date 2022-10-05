@@ -15,6 +15,11 @@ b.setAttribute('data-platform', navigator.platform );
 jQuery(function ($) {
     var supportsAudio = !!document.createElement('audio').canPlayType;
     if (supportsAudio) {
+
+        if ($('#audio1').length === 0) {
+            return;
+        }
+
         var index = 0,
             playing = false;
         mediaPath = '/playlist/',
