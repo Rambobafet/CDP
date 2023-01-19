@@ -18,11 +18,15 @@ register_nav_menus( array(
 	'footer' => 'Bas de page',
 ) );
 
-wp_enqueue_script('jquery');
-wp_enqueue_script( 'player', get_template_directory_uri() . '/js/player', ['jquery']);
-wp_enqueue_script( 'ariaMenu', get_template_directory_uri() . '/js/aria-menu', ['jquery']);
-wp_enqueue_script( 'mobileMenu', get_template_directory_uri() . '/js/mobileMenu', ['jquery']);
 
+function my_fe_scripts() {
+  wp_enqueue_script('jquery');
+  wp_enqueue_script( 'player', get_template_directory_uri() . '/js/player', ['jquery']);
+  wp_enqueue_script( 'ariaMenu', get_template_directory_uri() . '/js/aria-menu', ['jquery']);
+  wp_enqueue_script( 'mobileMenu', get_template_directory_uri() . '/js/mobileMenu', ['jquery']);
+
+}
+add_action( 'wp_enqueue_scripts', 'my_fe_scripts' );
 
 /**
  * Gutenberg scripts and styles
@@ -33,7 +37,7 @@ function cdp_gutenberg_scripts() {
 		'cdp-editor',
 		get_template_directory_uri() . '/js/editor.js',
 		array( 'wp-blocks', 'wp-dom' ),
-		filemtime( get_template_directory_uri() . '/js/editor.js' ),
+		filemtime( get_template_directory() . '/js/editor.js' ),
 		true
 	);
 }

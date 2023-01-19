@@ -1,0 +1,29 @@
+.pagination {
+  ul.page-numbers {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 10px 20px;
+    gap: 10px;
+
+    @media only screen and (min-width: $tablet) {
+      justify-content: center;
+    }
+    }
+
+  a.page-numbers {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.6rem;
+
+    &:visited {
+      color: $cdp-pink;
+    }
+  }
+
+  a.page-numbers:not(.prev):not(.next) {
+    padding: 5px;
+  }
+
+}
