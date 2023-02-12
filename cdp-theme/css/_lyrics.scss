@@ -264,6 +264,7 @@ a.paroles.pink:hover{
 }
 
 .lyric__trackNumber {
+  flex-shrink: 0;
   word-break: break-word;
   max-width: 80px;
   font-size: 3rem;
