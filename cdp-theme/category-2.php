@@ -42,8 +42,7 @@ get_header();
         endwhile;
     else:
         if  (intval($paged, 10) === 1):
-            echo '<h2>Dates à venir</h2>';
-            echo 'Oh no, il semblerait qu\'aucune date ne soit encore prévu. Vite vite <a href="/contact">contactez nous</a> :D';
+            echo '<div class="category__description"> Oh no, il semblerait qu\'aucune date ne soit encore prévu. Vite vite <a href="/contact">contactez nous</a> :D</div>';
         endif;
     endif;
     ?>
